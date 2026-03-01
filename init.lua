@@ -31,6 +31,7 @@ require("lazy").setup({
 	require("plugins.misc"),
 	require("plugins.comment"),
 	require("plugins.images"),
+	require("plugins.fterm"),
 
 	{
 		"niuiic/remote.nvim", -- this is the actual plugin
