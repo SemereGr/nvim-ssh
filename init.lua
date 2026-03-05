@@ -38,6 +38,7 @@ require("lazy").setup({
 
 	require("plugins.harpoon"),
 	require("plugins.image-support"),
+	require("plugins.opencode"),
 
 	{
 		"niuiic/remote.nvim", -- this is the actual plugin
