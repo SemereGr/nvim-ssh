@@ -54,15 +54,7 @@ return {
 		},
 		-- setting up with keys={} allows plugin to load when command runs at the start
 		keys = {
-			-- { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open lazy git" },
-			{
-				"<leader>lg",
-				function()
-					vim.system({ "bash", "-c", "ssh-add ~/.ssh/id_ed25519_git && lazygit" }, { detach = true })
-					vim.cmd("LazyGit")
-				end,
-				desc = "Open lazy git (SSH)",
-			},
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open lazy git" },
 		},
 	},
 }
