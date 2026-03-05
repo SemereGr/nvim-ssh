@@ -30,8 +30,14 @@ require("lazy").setup({
 	require("plugins.indent-blankline"),
 	require("plugins.misc"),
 	require("plugins.comment"),
-	require("plugins.images"),
-	require("plugins.fterm"),
+	-- require("plugins.images"),
+	require("plugins.myterm"),
+	require("plugins.gitstuff"),
+	require("plugins.tmux"),
+	require("plugins.snacks"),
+
+	require("plugins.harpoon"),
+	require("plugins.image-support"),
 
 	{
 		"niuiic/remote.nvim", -- this is the actual plugin
