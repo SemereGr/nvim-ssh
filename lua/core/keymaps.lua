@@ -95,3 +95,14 @@ vim.keymap.set("n", "<CR>", function()
 	-- Otherwise, let Neo-tree handle the default open (folders/files)
 	vim.cmd("NeoTreeExecute")
 end, { buffer = 0, desc = "Open image in Kitty or normal file" })
+
+-- File path notification and copy
+vim.keymap.set("n", "<leader>fp", function()
+	local file = vim.fn.expand("%:p")
+	if file == "" then
+		vim.notify("[No file]")
+		return
+	end
+	vim.fn.setreg("+", file)
+	vim.notify("Copied: " .. file)
+end, { desc = "Show and copy file path" })
