@@ -70,7 +70,7 @@ return {
 						config = "🛠",
 						event = "",
 						init = "",
-						python = "🐍",
+						python = "", --  "🐍" ""
 						keys = "",
 						plugin = "",
 						runtime = "",
@@ -318,9 +318,42 @@ return {
 			require("nvim-web-devicons").setup({
 				override = {
 					py = {
-						icon = "🐍",
-						color = "#61AFEF", -- your blue
+						icon = "",
+						color = "#006884", -- your blue
 						name = "Py",
+					},
+					sh = {
+						icon = "$",
+						color = "#89e051",
+						name = "Shell",
+					},
+					err = {
+						icon = "", -- ""
+						color = "#e06c75",
+						name = "ErrorLog",
+					},
+					out = {
+						icon = "󰈙",
+						color = "#61afef",
+						name = "Stdout",
+					},
+					cmd = {
+						icon = "⌘",
+						color = "#89e051",
+						name = "WindowsCmd",
+					},
+					pbs = {
+						icon = "", -- terminal/script icon from Nerd Fonts
+						color = "#f0c674", -- yellowish like shell scripts
+						name = "PBS",
+					},
+				},
+
+				override_by_filename = {
+					["README.md"] = {
+						icon = "", -- open book
+						color = "#219aca",
+						name = "Markdown",
 					},
 				},
 			})
