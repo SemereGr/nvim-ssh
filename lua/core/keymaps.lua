@@ -79,30 +79,3 @@ end, { desc = "Go to next diagnostic message" })
 
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
--- Use Neo-tree to open the file under the cursor
-vim.keymap.set("n", "<CR>", function()
-	local buf = vim.api.nvim_get_current_buf()
-	local file = vim.api.nvim_buf_get_name(buf)
-	local ext = vim.fn.fnamemodify(file, ":e"):lower()
-
-	-- If it's an image file, open it in Kitty (preview-style)
-	if vim.tbl_contains({ "png", "jpg", "jpeg", "gif", "webp", "avif" }, ext) then
-		vim.fn.jobstart({ "kitty", "nvim", file })
-		return
-	end
-
-	-- Otherwise, let Neo-tree handle the default open (folders/files)
-	vim.cmd("NeoTreeExecute")
-end, { buffer = 0, desc = "Open image in Kitty or normal file" })
-
--- File path notification and copy
-vim.keymap.set("n", "<leader>fp", function()
-	local file = vim.fn.expand("%:p")
-	if file == "" then
-		vim.notify("[No file]")
-		return
-	end
-	vim.fn.setreg("+", file)
-	vim.notify("Copied: " .. file)
-end, { desc = "Show and copy file path" })

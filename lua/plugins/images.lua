@@ -7,7 +7,7 @@ return {
 
 	-- `opts` work for image.nvim; if you use hologram.nvim, replace with `opts = { ... }`
 	opts = {
-		backend = "kitty", -- or 'wezterm' or 'wezterm', 'kitty', 'iterm2', 'sixel'
+		backend = "wezterm", -- or 'wezterm' or 'wezterm', 'kitty', 'iterm2', 'sixel'
 		max_width = nil,
 		max_height = nil,
 		max_width_window = 0.9,

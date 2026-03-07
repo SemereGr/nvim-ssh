@@ -363,5 +363,16 @@ return {
 		vim.keymap.set("n", "<leader>e", ":Neotree toggle position=left<CR>", { noremap = true, silent = true }) -- focus file explorer
 		vim.keymap.set("n", "<leader>ngs", ":Neotree float git_status<CR>", { noremap = true, silent = true }) -- open git status window
 		vim.keymap.set("n", "<leader>fr", "<cmd>Neotree reveal<CR>", { desc = "Reveal current file in Neo-tree" })
+
+		-- File path notification and copy
+		vim.keymap.set("n", "<leader>fp", function()
+			local file = vim.fn.expand("%:p")
+			if file == "" then
+				vim.notify("[No file]")
+				return
+			end
+			vim.fn.setreg("+", file)
+			vim.notify("Copied: " .. file)
+		end, { desc = "Show and copy file path" })
 	end,
 }

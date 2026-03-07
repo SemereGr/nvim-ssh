@@ -118,6 +118,7 @@ return {
 				enabled = function()
 					return vim.bo.filetype == "markdown"
 				end,
+				backend = "wezterm", -- added for WSL (remove on normal ubuntu terminal)
 				doc = {
 					float = false, -- show image on cursor hover
 					inline = false, -- show image inline
